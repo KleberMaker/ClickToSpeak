@@ -25,7 +25,7 @@ xcodebuild -project ClickToSpeak.xcodeproj -scheme ClickToSpeak -configuration R
 app="$temp/image/ClickToSpeak.app"
 mkdir "$temp/image"
 ditto "$root/build/Xcode/Build/Products/Release/ClickToSpeak.app" "$app"
-lipo -verify_arch arm64 "$app/Contents/MacOS/ClickToSpeak"
+lipo "$app/Contents/MacOS/ClickToSpeak" -verify_arch arm64
 if [[ "$mode" == distribution ]]; then
     codesign --force --options runtime --timestamp --entitlements ClickToSpeak/ClickToSpeak.entitlements \
         --sign "$DEVELOPER_ID" "$app"
