@@ -1,0 +1,37 @@
+name: Construire ClickToSpeak
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/macos.yml', 'ClickToSpeak/**', 'ClickToSpeak.xcodeproj/**', 'scripts/**', 'Tests/**']
+permissions:
+  contents: write
+jobs:
+  mac:
+    runs-on: macos-26
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import initial des sources
+        if: hashFiles('ClickToSpeak-Xcode.zip') != ''
+        run: |
+          unzip -q ClickToSpeak-Xcode.zip -d "$RUNNER_TEMP/import"
+          rsync -a --exclude='/.github/' "$RUNNER_TEMP/import/ClickToSpeak/" ./
+          git rm ClickToSpeak-Xcode.zip
+          git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Versionner les sources Swift, le projet Xcode et les tests'
+          git push origin HEAD:main
+      - name: Compiler et vérifier le DMG
+        run: |
+          xcodebuild -version
+          bash scripts/distribution.sh local
+      - name: Publier les fichiers de test dans le dépôt privé
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          packages=(dist/*/ClickToSpeak.dmg)
+          cp "${packages[0]}" dist/ClickToSpeak.dmg
+          ditto -c -k --keepParent "$(dirname "${packages[0]}")/ClickToSpeak.app" dist/ClickToSpeak.app.zip
+          cd dist
+          shasum -a 256 ClickToSpeak.dmg ClickToSpeak.app.zip > SHA256.txt
+          gh release create "test-$GITHUB_RUN_NUMBER-$GITHUB_RUN_ATTEMPT" --target "$(git rev-parse HEAD)" --prerelease --title 'ClickToSpeak pour Mac Apple Silicon' --notes 'Version de test pour macOS 26 ou ultérieur, avec signature ad hoc. Les essais interactifs sur Mac restent à effectuer.' ClickToSpeak.dmg ClickToSpeak.app.zip SHA256.txt
