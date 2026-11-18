@@ -41,7 +41,17 @@ struct DictatedText {
     private(set) var selection: NSRange
 
     init(original: String, selection: NSRange) throws {
-        guard Range(selection, in: original) != nil else {
+        let utf16 = original.utf16
+        func isBoundary(_ offset: Int) -> Bool {
+            guard offset >= 0, offset <= utf16.count else { return false }
+            if offset == utf16.count { return true }
+            let unit = utf16[utf16.index(utf16.startIndex, offsetBy: offset)]
+            return !(0xDC00...0xDFFF).contains(unit)
+        }
+        guard selection.location >= 0, selection.length >= 0,
+              selection.location <= utf16.count, selection.length <= utf16.count - selection.location,
+              isBoundary(selection.location), isBoundary(NSMaxRange(selection)),
+              Range(selection, in: original) != nil else {
             throw DictationError.message("La position du curseur est indisponible.")
         }
         let string = original as NSString
