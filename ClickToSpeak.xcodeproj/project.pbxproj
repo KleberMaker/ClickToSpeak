@@ -1,0 +1,43 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 56;
+    objects = {
+        0000000000000000000000C8 = { isa = PBXBuildFile; fileRef = 000000000000000000000064; };
+        0000000000000000000000C9 = { isa = PBXBuildFile; fileRef = 000000000000000000000065; };
+        0000000000000000000000CA = { isa = PBXBuildFile; fileRef = 000000000000000000000066; };
+        0000000000000000000000CB = { isa = PBXBuildFile; fileRef = 000000000000000000000067; };
+        0000000000000000000000CC = { isa = PBXBuildFile; fileRef = 000000000000000000000068; };
+        0000000000000000000000CD = { isa = PBXBuildFile; fileRef = 000000000000000000000069; };
+        0000000000000000000000CE = { isa = PBXBuildFile; fileRef = 00000000000000000000006A; };
+        0000000000000000000000CF = { isa = PBXBuildFile; fileRef = 00000000000000000000006B; };
+        0000000000000000000000D2 = { isa = PBXBuildFile; fileRef = 00000000000000000000006E; };
+        000000000000000000000064 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+        000000000000000000000065 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+        000000000000000000000066 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictation.swift; sourceTree = "<group>"; };
+        000000000000000000000067 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictatedText.swift; sourceTree = "<group>"; };
+        000000000000000000000068 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanel.swift; sourceTree = "<group>"; };
+        000000000000000000000069 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedField.swift; sourceTree = "<group>"; };
+        00000000000000000000006A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKey.swift; sourceTree = "<group>"; };
+        00000000000000000000006B = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microphone.swift; sourceTree = "<group>"; };
+        00000000000000000000006C = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        00000000000000000000006D = { isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClickToSpeak.entitlements; sourceTree = "<group>"; };
+        00000000000000000000006E = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        000000000000000000000007 = { isa = PBXFileReference; explicitFileType = wrapper.application; path = ClickToSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        000000000000000000000004 = { isa = PBXGroup; children = (000000000000000000000064, 000000000000000000000065, 000000000000000000000066, 000000000000000000000067, 000000000000000000000068, 000000000000000000000069, 00000000000000000000006A, 00000000000000000000006B, 00000000000000000000006C, 00000000000000000000006D, 00000000000000000000006E); path = ClickToSpeak; sourceTree = "<group>"; };
+        000000000000000000000005 = { isa = PBXGroup; children = (000000000000000000000007); name = Products; sourceTree = "<group>"; };
+        000000000000000000000006 = { isa = PBXGroup; children = (000000000000000000000004, 000000000000000000000005); sourceTree = "<group>"; };
+        000000000000000000000003 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (0000000000000000000000C8, 0000000000000000000000C9, 0000000000000000000000CA, 0000000000000000000000CB, 0000000000000000000000CC, 0000000000000000000000CD, 0000000000000000000000CE, 0000000000000000000000CF); runOnlyForDeploymentPostprocessing = 0; };
+        000000000000000000000008 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (0000000000000000000000D2); runOnlyForDeploymentPostprocessing = 0; };
+        000000000000000000000002 = { isa = PBXNativeTarget; buildConfigurationList = 00000000000000000000000B; buildPhases = (000000000000000000000003, 000000000000000000000008); buildRules = (); dependencies = (); name = ClickToSpeak; productName = ClickToSpeak; productReference = 000000000000000000000007; productType = "com.apple.product-type.application"; };
+        000000000000000000000001 = { isa = PBXProject; attributes = { LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; }; buildConfigurationList = 00000000000000000000000A; compatibilityVersion = "Xcode 14.0"; developmentRegion = fr; hasScannedForEncodings = 0; knownRegions = (fr, Base); mainGroup = 000000000000000000000006; productRefGroup = 000000000000000000000005; projectDirPath = ""; projectRoot = ""; targets = (000000000000000000000002); };
+        000000000000000000000014 = { isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 26.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; DEBUG_INFORMATION_FORMAT = dwarf; }; name = Debug; };
+        000000000000000000000015 = { isa = XCBuildConfiguration; buildSettings = { ARCHS = arm64; SDKROOT = macosx; MACOSX_DEPLOYMENT_TARGET = 26.0; SWIFT_VERSION = 5.0; CLANG_ENABLE_MODULES = YES; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; }; name = Release; };
+        000000000000000000000016 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_NAME = ClickToSpeak; PRODUCT_BUNDLE_IDENTIFIER = app.clicktospeak.mac; INFOPLIST_FILE = ClickToSpeak/Info.plist; CODE_SIGN_ENTITLEMENTS = ClickToSpeak/ClickToSpeak.entitlements; CODE_SIGN_STYLE = Manual; CODE_SIGN_IDENTITY = "-"; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; MARKETING_VERSION = 1.0; CURRENT_PROJECT_VERSION = 1; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; }; name = Debug; };
+        000000000000000000000017 = { isa = XCBuildConfiguration; buildSettings = { PRODUCT_NAME = ClickToSpeak; PRODUCT_BUNDLE_IDENTIFIER = app.clicktospeak.mac; INFOPLIST_FILE = ClickToSpeak/Info.plist; CODE_SIGN_ENTITLEMENTS = ClickToSpeak/ClickToSpeak.entitlements; CODE_SIGN_STYLE = Manual; CODE_SIGN_IDENTITY = "-"; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; MARKETING_VERSION = 1.0; CURRENT_PROJECT_VERSION = 1; ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; }; name = Release; };
+        00000000000000000000000A = { isa = XCConfigurationList; buildConfigurations = (000000000000000000000014, 000000000000000000000015); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+        00000000000000000000000B = { isa = XCConfigurationList; buildConfigurations = (000000000000000000000016, 000000000000000000000017); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+    };
+    rootObject = 000000000000000000000001;
+}

@@ -1,0 +1,21 @@
+ClickToSpeak — Dictée française pour Mac
+
+Installation
+Sur un Mac Apple Silicon sous macOS 26 ou ultérieur, ouvrez le DMG, glissez ClickToSpeak dans Applications, puis ouvrez l’app depuis Applications. Une onde apparaît dans la barre des menus.
+
+Première dictée
+1. Placez le curseur dans un champ de texte. Faites un clic droit, puis choisissez ClickToSpeak, éventuellement sous Services. Vous pouvez aussi appuyer sur Contrôle + Maj + D.
+2. Autorisez ClickToSpeak dans Réglages Système > Confidentialité et sécurité > Accessibilité. Cet accès permet d’écrire dans le champ actif. Revenez au champ et relancez la dictée.
+3. Acceptez la demande Microphone. Le premier téléchargement du modèle de français nécessite Internet. Attendez « Écoute en cours » avant de parler. Une fois le modèle installé, vous pouvez dicter hors ligne.
+4. Parlez puis cliquez sur Terminer. Le dernier texte reste dans le champ. Vous décidez quand l’envoyer.
+
+Pendant la dictée
+Une sélection reste intacte. Les mots s’ajoutent après elle. Si vous changez de champ, déplacez le curseur ou modifiez le texte à la main, la session s’arrête. Le micro est coupé et le texte déjà affiché reste en place. L’app ne crée aucun fichier audio ni historique.
+
+Si le clic droit ne propose pas ClickToSpeak, essayez le menu de l’application > Services ou le raccourci global. Les champs de mot de passe sont exclus. Certains éditeurs ne donnent pas accès à l’insertion.
+
+Réglages
+Cliquez sur l’onde dans la barre des menus pour choisir l’une des trois combinaisons ou consulter les autorisations. En cas de refus, ouvrez le réglage Microphone ou Accessibilité, autorisez ClickToSpeak, puis revenez au champ et relancez la dictée. Si macOS demande de rouvrir l’app, acceptez.
+
+Désinstallation
+Cliquez sur l’onde > Quitter ClickToSpeak, puis placez ClickToSpeak dans la Corbeille depuis Applications.
